@@ -1,5 +1,4 @@
 import { Component } from 'react';
-import Table from '../components/Table'
 import config from '../config'
 
 class Lyrics extends Component {
@@ -29,9 +28,13 @@ class Lyrics extends Component {
     render() {
         return (
             <div>
-                <h1>{this.state.results.length > 0 ? this.state.results[0].song + " by " + this.state.results[0].artist : 'loading'}</h1>
-                <p className="p">{this.state.results.length > 0 ? this.state.results[0].lyrics.replace(/\r?\n|\r/g, `
-                `) : ''}</p>
+                <p className="lyrics">
+                    <h1 className="lyrics-header">{this.state.results.length > 0 ? this.state.results[0].song : 'Loading'}</h1>
+                    <span className="lyrics-by">{ this.state.results.length > 0 ? " by " + this.state.results[0].artist : ''}</span>
+                </p>
+                <p className="lyrics-body">
+                    {this.state.results.length > 0 ? this.state.results[0].lyrics.replace(/\r?\n|\r/g, '\n') : ''}
+                </p>
             </div>
         );
     }

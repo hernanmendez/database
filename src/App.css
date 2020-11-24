@@ -19,6 +19,10 @@ a {
   cursor: auto;
 }
 
+td > a {
+  color: rgb(9, 0, 20);
+}
+
 .navbar {
   margin: 0;
   color: rgb(88, 88, 88);
@@ -107,6 +111,20 @@ a {
   font-size: 16px;
 }
 
-.p {
+.lyrics {
+  margin-top: 60px;
+}
+
+.lyrics-header {
+  font-size: 40px;
+  display: inline;
+}
+
+.lyrics-by {
+  font-size: 20px;
+  font-weight: 100;
+}
+
+.lyrics-body {
   white-space: pre-line;
 }
