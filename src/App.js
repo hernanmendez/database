@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom'
+import Artist from './routes/Artist'
+import ArtistSearch from './routes/ArtistSearch'
+import Lyrics from './routes/Lyrics'
+import SongSearch from './routes/SongSearch'
+import WordSearch from './routes/WordSearch'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <nav>
+          <h1 className="header"><a href="/">Songs & Lyrics</a></h1>
+          <div className="navbar">
+            <span className="nav-subheader">Ranked by cheerfulness</span>
+            <Link to="/">Songs</Link> |
+            <Link to="/artistSearch">Artists</Link> |
+            <Link to="/wordSearch">Word Search</Link>
+          </div>
+        </nav>
+        <Switch>
+          <Route path="/artistSearch/:artistSearch?" component={ArtistSearch} />
+          <Route path="/wordSearch/:wordSearch?" component={WordSearch} />
+          <Route path="/artist/:artist" component={Artist} />
+          <Route path="/lyrics/:id" component={Lyrics} />
+          <Route path="/:songSearch?" component={SongSearch} />
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
 }
 
-export default App;
+export default App

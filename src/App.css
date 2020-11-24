@@ -1,38 +1,112 @@
 .App {
-  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  margin-bottom: -20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header {
+  font-family: 'Josefin Sans', sans-serif;
+  margin: 40px 0 5px 0;
+  font-size: 50px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+a {
+  text-decoration: inherit;
+  color: inherit;
+  cursor: auto;
+}
+
+.navbar {
+  margin: 0;
+  color: rgb(88, 88, 88);
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.2em;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.nav-subheader {
+  display: block;
+  flex-grow: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav-link {
+  display: block;
+  padding: 0 10px;
+}
+
+.table-comp {
+  border: none;
+  border-collapse: collapse;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.table-comp td, .table-comp th{
+  border: 2px solid rgb(230, 230, 230);
+  text-align: left;
+  padding: 5px;
+}
+
+.table-comp tr th{
+  border-top: none;
+  font-size: 1.3em;
+  color: rgb(41, 41, 41);
+}
+
+.table-comp tr td {
+  font-size: 1.1em;
+  color: rgb(110, 110, 110);
+}
+
+.table-comp tr:last-child td{
+  border-bottom: none;
+}
+
+.table-comp tr th:first-child, .table-comp tr td:first-child {
+  border-left: none;
+}
+
+.table-comp tr th:last-child, .table-comp tr td:last-child {
+  border-right: none;
+}
+
+.table-comp tr:nth-child(odd) {
+  background-color: rgb(245, 245, 245);
+  color: rgb(54, 54, 54);
+}
+
+.table-comp tr:first-child {
+  background-color: rgb(255, 255, 255);
+}
+
+.searchbar {
+  margin-top: 40px;
+  display: flex;
+}
+
+.searchbar > input {
+  border: none;
+  border-bottom: 1px solid black;
+  margin-right: 10px;
+  font-size: 18px;
+  flex: 1;
+}
+.searchbar > input:focus {
+  outline: none;
+}
+
+.searchbar > button {
+  width: 120px;
+  height: 30px;
+  border: 0px;
+  border-radius: 5px;
+  font-weight: lighter;
+  font-size: 16px;
+}
+
+.p {
+  white-space: pre-line;
 }
