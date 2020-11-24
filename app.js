@@ -30,21 +30,21 @@ const path = require('path');
 
 app.get('/api/getSongs/:songSearch?', cors(), (req, res) => {
     const parameter = req.params.songSearch ? req.params.songSearch : "";
-    connection.query("SELECT artist, song, valence, id FROM songs_and_lyrics WHERE song like " + connection.escape(`%${parameter}%`) + " limit 101", (err, results) => {
+    connection.query("SELECT artist, song, valence, id FROM songs_and_lyrics WHERE song like " + connection.escape(`%${parameter}%`) + " limit 100", (err, results) => {
         res.json(results)
     })
 })
 
 app.get('/api/artistSearch/:artistSearch?', cors(), (req, res) => {
     const parameter = req.params.artistSearch ? req.params.artistSearch : "";
-    connection.query("SELECT artist, count(id) songs, AVG(valence) valence FROM songs_and_lyrics WHERE artist like " + connection.escape(`%${parameter}%`) + "group by artist limit 101", (err, results) => {
+    connection.query("SELECT artist, count(id) songs, AVG(valence) valence FROM songs_and_lyrics WHERE artist like " + connection.escape(`%${parameter}%`) + "group by artist limit 100", (err, results) => {
         res.json(results);
     })
 })
 
 app.get('/api/wordSearch/:wordSearch?', cors(), (req, res) => {
     const parameter = req.params.wordSearch ? req.params.wordSearch : "";
-    connection.query("SELECT artist, song, valence, id FROM songs_and_lyrics WHERE lyrics like " + connection.escape(`%${parameter}%`) + " limit 101", (err, results) => {
+    connection.query("SELECT artist, song, valence, id FROM songs_and_lyrics WHERE lyrics like " + connection.escape(`%${parameter}%`) + " limit 100", (err, results) => {
         res.json(results);
     })
 })

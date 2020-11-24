@@ -13,7 +13,7 @@ function App() {
         <nav>
           <h1 className="header"><a href="/">Songs & Lyrics</a></h1>
           <div className="navbar">
-            <span className="nav-subheader">Ranked by cheerfulness</span>
+            <span className="nav-subheader">By Hernan Mendez</span>
             <Link to="/">Songs</Link> |
             <Link to="/artistSearch">Artists</Link> |
             <Link to="/wordSearch">Word Search</Link>
